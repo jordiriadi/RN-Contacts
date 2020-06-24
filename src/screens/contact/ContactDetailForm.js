@@ -36,7 +36,7 @@ class ContactDetailForm extends React.Component {
     const { contact, onPressEdit } = this.props;
 
     return (
-      <View style={styles.container}>
+      <View id="form-container" style={styles.container}>
         <View style={styles.personalInfoContainer}>
           {this.contactFields.map(field => (
             <View key={field.fieldName} style={styles.rowContainer}>

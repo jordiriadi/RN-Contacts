@@ -62,7 +62,7 @@ class ModifyContactForm extends React.Component {
     });
 
   render() {
-    const {onSave, isLoading} = this.props;
+    const {onSave, onCancel, isLoading} = this.props;
     const {fieldValues} = this.state;
 
     return (
@@ -99,7 +99,11 @@ class ModifyContactForm extends React.Component {
         ))}
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
-            <Button type="solid" disabled={isLoading}>
+            <Button 
+              type="solid"
+              disabled={isLoading}
+              onPress={onCancel}
+            >
               Cancel
             </Button>
           </View>
@@ -154,6 +158,7 @@ ModifyContactForm.propTypes = {
   modify: PropTypes.oneOf(["update", "create"]),
   value: PropTypes.object,
   onSave: PropTypes.func,
+  onCancel: PropTypes.func,
   isLoading: PropTypes.bool
 }
 

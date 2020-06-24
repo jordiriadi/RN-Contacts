@@ -47,6 +47,8 @@ class EditContactScreen extends React.Component {
   }
 
   handleResetError = () => this.setState({ error: null });
+  
+  handleCancel = () => this.props.navigation.goBack();
 
   render() {
     const { error } = this.state;
@@ -64,6 +66,7 @@ class EditContactScreen extends React.Component {
           modify={"update"} 
           value={contact}
           onSave={this.handleUpdateContact} 
+          onCancel={this.handleCancel}
           isLoading={this.state.loading} 
           />
       </View>

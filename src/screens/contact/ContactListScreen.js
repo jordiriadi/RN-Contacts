@@ -62,7 +62,7 @@ class ContactListScreen extends React.Component {
     const { contacts } = this.state;
     
     return (
-      <View>
+      <View id="list-container">
         {this.state.loading && (
           <ActivityIndicator id="loading-indicator" size="large"/>
         )}

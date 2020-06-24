@@ -42,6 +42,8 @@ class AddContactScreen extends React.Component {
 
   handleResetError = () => this.setState({ error: null });
 
+  handleCancel = () => this.props.navigation.goBack();
+
   render() {
     const { error } = this.state;
 
@@ -56,6 +58,7 @@ class AddContactScreen extends React.Component {
         <ModifyContactForm
           modify={"create"}
           onSave={this.handleAddContact}
+          onCancel={this.handleCancel}
           isLoading={this.state.loading}
         />
       </View>
