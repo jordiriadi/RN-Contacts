@@ -12,7 +12,7 @@ const Contact = ({
   age: `${age}`,
   photo,
   initial: getInitials(firstName, lastName),
-  section: firstName && firstName[0]
+  section: firstName && firstName[0].toUpperCase()
 });
 
 const getInitials = (firstName, lastName) => {
