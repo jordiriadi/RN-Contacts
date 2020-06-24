@@ -27,5 +27,5 @@ describe('Add Contact Screen', () => {
     const component = shallow(<AddContactScreen/>);
 
     expect(component.instance().handleAddContact());
-  })
+  });
 })
