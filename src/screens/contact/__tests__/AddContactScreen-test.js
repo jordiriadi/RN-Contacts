@@ -22,4 +22,10 @@ describe('Add Contact Screen', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('can trigger handle add contact', () => {
+    const component = shallow(<AddContactScreen/>);
+
+    expect(component.instance().handleAddContact());
+  })
 })

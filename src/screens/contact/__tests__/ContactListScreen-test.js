@@ -6,7 +6,7 @@ import ContactListScreen from '../ContactListScreen';
 import ContactService from '../ContactService';
 import ContactListItem from '../components/ContactListItem';
 
-const mockData = [
+const data = [
   {
     "age": "20",
     "firstName": "Luke",
@@ -25,6 +25,17 @@ const mockData = [
     "name": "LukeTheSecond Skywalker",
     "photo": "N/A"
   }
+]
+
+const mockData = [
+  {    
+    title: "A",
+    data: data
+  },
+  {    
+    title: "B",
+    data: data
+  },
 ]
 
 ContactService.getContacts = jest.fn(() => Promise.resolve(mockData));
@@ -48,7 +59,17 @@ describe('Contact List Screen', () => {
   it('Show Contact List', () => {
     const wrapper = shallow(<ContactListScreen />);
 
+    expect(wrapper.find('#list-container'));
     expect(wrapper.find('#section-list'))
-  })
+  });
+
+  it('can trigger most of component functions', () => {
+    const wrapper = shallow(<ContactListScreen />);
+
+    wrapper.setState({contact: mockData});
+    expect(wrapper.state().contact).toEqual(mockData);
+
+    expect(wrapper.instance().getContacts());
+  });
 });
 

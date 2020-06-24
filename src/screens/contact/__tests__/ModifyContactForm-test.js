@@ -13,6 +13,8 @@ const mockData = {
   "photo": "N/A"
 }
 
+const addContact = jest.fn(() => Promise.resolve(mockData));
+
 describe('Contact  Detail Form', () => {  
   it('renders correctly', () => {
   
@@ -23,14 +25,15 @@ describe('Contact  Detail Form', () => {
 
   
   it('can add contact correctly', () => {
-    const wrapper = shallow(<ModifyContactForm modify="create" contact={mockData} />);
+    const wrapper = shallow(<ModifyContactForm modify="create" contact={mockData} onSave={addContact} />);
 
     wrapper.setState({fieldValues: mockData});
     expect(wrapper.state().fieldValues).toEqual(mockData);
 
+    expect(wrapper.find('#form-container'));
     wrapper.find('#input-age').simulate('changeText', '23');
     wrapper.find('#input-firstName').simulate('changeText', 'first name');
     wrapper.find('#btn-save').simulate('click');
-    expect(wrapper).toMatchSnapshot();
+    
   });
 })

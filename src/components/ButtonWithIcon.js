@@ -10,6 +10,7 @@ const ButtonWithIcon = (props) => {
   const { disabled, iconName, iconSize = 25, buttonText } = props;
   return (
     <TouchableOpacity
+      id="btn-container"
       disabled={disabled}
       onPress={props.onPress}
       style={{

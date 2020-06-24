@@ -19,5 +19,7 @@ describe('Contact  Detail Form', () => {
     const wrapper = shallow(<ContactDetailForm contact={mockData}/>);
 
     expect(wrapper).toMatchSnapshot();
+
+    expect(wrapper.find('#form-container'));
   });
 })

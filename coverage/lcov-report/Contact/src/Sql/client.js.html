@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.66% </span>
+                <span class="strong">65.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/47</span>
+                <span class='fraction'>31/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">41.18% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/34</span>
+                <span class='fraction'>14/34</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>4/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/24</span>
+                <span class='fraction'>16/24</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,16 +125,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,25 +145,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,17 +182,17 @@ const handleSuccessfulRequest = (respon<span class="fstat-no" title="function no
 <span class="cstat-no" title="statement not covered" >  return Promise.resolve(response);</span>
 }
 &nbsp;
-const handleFailedRequest = (respon<span class="fstat-no" title="function not covered" >se) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return Promise.reject(response.message);</span>
+const handleFailedRequest = (response) =&gt; {
+  return Promise.reject(response.message);
 }
 &nbsp;
-export const request = <span class="fstat-no" title="function not covered" >(service</span>Context = {}, options = <span class="cstat-no" title="statement not covered" >{}) =&gt; {<span class="cstat-no" title="statement not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >  const { apiClient = defau</span>ltApiClient <span class="cstat-no" title="statement not covered" >} = serviceContext;</span>
+export const request = (serviceContext = {}, options = {}) =&gt; {<span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ></span></span>
+  const { apiClient = defaultApiClient } = serviceContext;<span class="branch-1 cbranch-no" title="branch not covered" ></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return asyncRequest(apiClient, options);</span>
+  return asyncRequest(apiClient, options);
 }
 &nbsp;
-async fun<span class="fstat-no" title="function not covered" >ction asyncRe</span>quest(apiClient, options) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span>
+async function asyncRequest(apiClient, options) {
   const {
     method = null,
     mode = 'cors',
@@ -203,25 +203,25 @@ async fun<span class="fstat-no" title="function not covered" >ction asyncRe</spa
     },
     query,
     stringifyParams = ''
-  } = options;<span class="cstat-no" title="statement not covered" ></span>
+  } = options;<span class="branch-0 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span></span></span>
 &nbsp;
   try {
-    const <span class="cstat-no" title="statement not covered" >apiClientWithParam = apiClient + stringifyParams;<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+    const apiClientWithParam = apiClient + stringifyParams;
     const response = await fetch(apiClientWithParam, {
       mode, 
       method, 
       headers, 
-      body: JSON.stringify(query)<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+      body: JSON.stringify(query)<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="branch-1 cbranch-no" title="branch not covered" ></span></span></span></span>
     });
-    const json = await response.js<span class="cstat-no" title="statement not covered" >on();<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
-    const statusCode = await respon<span class="cstat-no" title="statement not covered" >se.status;<span class="cstat-no" title="statement not covered" ></span></span>
+    const json = await resp<span class="branch-2 cbranch-no" title="branch not covered" >onse.js<span class="cstat-no" title="statement not covered" >on();<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span></span>
+    const statusCode = awai<span class="branch-3 cbranch-no" title="branch not covered" >t respon<span class="cstat-no" title="statement not covered" >se.status;<span class="cstat-no" title="statement not covered" ></span></span></span>
     
     if (statusCode === 400) {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
-      return handleFailedRequest(json);<span class="cstat-no" title="statement not covered" ></span>
+      return handleFailedRequest(json<span class="branch-4 cbranch-no" title="branch not covered" >);<span class="cstat-no" title="statement not covered" ></span></span>
     }
-    return handleSuccessfulRequest(json);<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ></span></span></span>
+    return handleSuccessfulRequest(json);
   } catch(err) {
-    return handleFailedRequest(err);<span class="cstat-no" title="statement not covered" ></span>
+    return handleFailedRequest(err);<span class="branch-6 cbranch-no" title="branch not covered" ></span>
   }
 }
 &nbsp;
@@ -238,7 +238,7 @@ export default SqlClient;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 24 2020 16:33:49 GMT+0700 (Western Indonesia Time)
+                at Wed Jun 24 2020 18:44:08 GMT+0700 (Western Indonesia Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
