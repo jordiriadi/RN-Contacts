@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact  Detail Form can add contact correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Contact  Detail Form renders correctly 1`] = `ShallowWrapper {}`;
