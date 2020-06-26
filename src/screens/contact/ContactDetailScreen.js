@@ -40,7 +40,6 @@ class ContactDetailScreen extends React.Component {
     });
   }
   
-  // this is a workaround, because this project haven't implement Redux yet.
   setDeleteFunction = () => this.props.navigation.setParams({ handleOpenAlert: () => this.handleOpenAlert() });
 
   componentDidUpdate(prevProps) {
